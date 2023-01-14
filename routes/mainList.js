@@ -42,11 +42,11 @@ toDoRouter.put("/:todoId", (req, res) => {
 })
 
 //delete
-// toDoRouter.delete("/:todoId", (req, res) => {
-//     const id = req.params.todoId
-//     const todoIndex = toDoList.findIndex(todo => todo._id === id)
-//     toDoList.splice(todoIndex, 1)
-//     res.send("to do is gone")
-// })
+toDoRouter.delete("/:todoId", (req, res) => {
+    const id = req.params.todoId
+    const todoIndex = toDoList.findIndex(todo => todo._id === id)
+    toDoList.splice(todoIndex, 1)
+    res.send("The todo is gone")
+})
 
 module.exports = toDoRouter

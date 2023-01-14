@@ -3,14 +3,13 @@ const toDoRouter = express.Router()
 const { v4: uuidv4 } = require('uuid');
 
 const toDoList = [
-    {
-        name: "The name",
-        description: "The description of the todo",
-        imageUrl: "http://www.myimage....",
-        completed: false,
-        // _id: uuidv4()
-        _id: "2"
-    },
+    // {
+    //     name: "The name",
+    //     description: "The description of the todo",
+    //     imageUrl: "http://www.myimage....",
+    //     completed: false,
+    //     _id: uuidv4()
+    // },
 ]
 
 //get all 

@@ -8,8 +8,8 @@ const toDoList = [
         description: "The description of the todo",
         imageUrl: "http://www.myimage....",
         completed: false,
-        _id: uuidv4()
-        // _id: "2"
+        // _id: uuidv4()
+        _id: "2"
     },
 ]
 
@@ -32,5 +32,21 @@ toDoRouter.post("/", (req, res) => {
     toDoList.push(newToDo)
     res.send("new todo posted")
 })
+
+//put 
+toDoRouter.put("/:todoId", (req, res) => {
+    const id = req.params.todoId
+    const todoIndex = toDoList.findIndex(todo => todo._id === id)
+    const updatedTodo = Object.assign(toDoList[todoIndex], req.body)
+    res.send(updatedTodo)
+})
+
+//delete
+// toDoRouter.delete("/:todoId", (req, res) => {
+//     const id = req.params.todoId
+//     const todoIndex = toDoList.findIndex(todo => todo._id === id)
+//     toDoList.splice(todoIndex, 1)
+//     res.send("to do is gone")
+// })
 
 module.exports = toDoRouter
